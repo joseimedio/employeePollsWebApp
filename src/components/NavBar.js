@@ -22,7 +22,7 @@ const NavBar = ({authedUser, users, dispatch}) => {
             <div className="nav-bar-left">
                 <Link to="/" className="nav-bar-element">Home</Link>
                 <Link to="/leaderboard" className="nav-bar-element">Leaderboard</Link>
-                <Link to="/new" className="nav-bar-element">New</Link>
+                <Link to="/add" className="nav-bar-element">New</Link>
             </div>
             {
                 authedUser === "none"

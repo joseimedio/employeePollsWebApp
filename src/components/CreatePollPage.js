@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { connect } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import NavBar from "./NavBar";
 import { handleAddQuestion } from "../actions/shared";
 
 const CreatePollPage = ({dispatch, authedUser, users}) => {
-
+    const [submittingForm, setSubmittingForm] = useState(false);
     const [optionOneText, setOptionOneText] = useState("");
     const [optionTwoText, setOptionTwoText] = useState("");
 
@@ -17,21 +18,21 @@ const CreatePollPage = ({dispatch, authedUser, users}) => {
         : setOptionTwoText(input)
     }
 
+    const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
 
-       dispatch(handleAddQuestion({
-            author: authedUser,
-            optionOneText,
-            optionTwoText,
-        }));
-
-        setOptionOneText("");
-        setOptionTwoText("");
+        setSubmittingForm(true);
+        dispatch(handleAddQuestion({
+                author: authedUser,
+                optionOneText,
+                optionTwoText,
+            }))
+                .then(() => navigate("/"));
     }
 
     return (
-        typeof(authedUser)!=='string'
+        typeof(authedUser)!=='string' || submittingForm
         ? <div className="loading"></div>
         :<div>
             <NavBar />
@@ -39,6 +40,7 @@ const CreatePollPage = ({dispatch, authedUser, users}) => {
             <div className="poll">
                 <img className="avatar" src={users[authedUser].avatarURL}></img>
                 <h3>{`Author: ${authedUser}`}</h3>
+                <p>Would you rather...</p>
                 <form
                     onSubmit={handleSubmit}
                 >

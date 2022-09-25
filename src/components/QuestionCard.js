@@ -14,7 +14,7 @@ const QuestionCard = ({id, questions, users, authedUser}) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate(`/poll/${id}`);
+        navigate(`/questions/${id}`);
     }
 
     return (

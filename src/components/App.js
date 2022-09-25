@@ -27,9 +27,9 @@ const App = (props) => {
         <Routes>
           <Route path="/" exact element={notLoggedIn() ? <LoginPage /> : <DashboardPage/>}/>
           <Route path="/leaderboard" element={notLoggedIn() ? <Error404 /> : <LeaderboardPage/>}/>
-          <Route path="/new" element={notLoggedIn() ? <Error404 /> : <CreatePollPage/>}/>
+          <Route path="/add" element={notLoggedIn() ? <Error404 /> : <CreatePollPage/>}/>
           <Route path="/login" element={<LoginPage/>}/>
-          <Route path="/poll/:id" element={notLoggedIn() ? <Error404 /> : <PollPage/>}/>
+          <Route path="/questions/:id" element={notLoggedIn() ? <Error404 /> : <PollPage/>}/>
         </Routes>
       }
     </div>
