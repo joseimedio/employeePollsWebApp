@@ -36,7 +36,7 @@ Contains the Redux reducers `authedUser`, `questions`, `users` and `index`.
 
 ### Tests
 
-Contains the Jest test files `_DATA.test.js` and `Error404.test.js`.
+Contains the Jest test files `_DATA.test.js`, `api.test.js`, `App.test.js` and `Error404.test.js`.
 
 ### Utils
 
