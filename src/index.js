@@ -10,8 +10,6 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 const store = createStore(reducer, middleware);
 
-console.log(store);
-
 ReactDOM.render(
     <Provider store={store}>
         <Router>

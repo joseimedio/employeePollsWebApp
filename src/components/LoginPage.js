@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setAuthedUser } from "../actions/authedUser";
@@ -6,6 +7,12 @@ import NavBar from "./NavBar";
 const LoginPage = ({users, dispatch, authedUser}) => {
     const greyIconURL = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg_mX2fvgErDkDqDuXuh_zVs5CpE9qvs3maItbzDH-VzH3wzbRmNtEEqsyfUzZRSJhU54&usqp=CAU';
 
+    const [targetUrl, setTargetUrl] = useState("");                               //Declare global variables.
+    useEffect(() => {
+        const choppedUrl = window.location.href;         //Read id from current URL.
+        const url = choppedUrl.replace("http://localhost:3000", "");
+        setTargetUrl(url);
+    }, []);
 
     const ids = Object.keys({users}.users);
 
@@ -16,7 +23,7 @@ const LoginPage = ({users, dispatch, authedUser}) => {
 
         dispatch(setAuthedUser(e.target.value));     
         
-        navigate("/");
+        navigate(targetUrl);
     }
 
     return (

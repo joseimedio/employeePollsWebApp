@@ -1,7 +1,7 @@
 import { RECEIVE_QUESTIONS, RECEIVE_OPTION_ONE, RECEIVE_OPTION_TWO, ADD_QUESTION } from "../actions/questions";
 
 export default function questions(state={}, action) {
-    console.log(action);
+
     switch (action.type) {
         case RECEIVE_QUESTIONS:
             return {

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import Error404 from '../components/Error404';
+import Error404 from '../components/__mocks__/Error404';
+import '@testing-library/jest-dom'
 
 //Code taken from https://blog.logrocket.com/testing-react-router-usenavigate-hook-react-testing-library/
 

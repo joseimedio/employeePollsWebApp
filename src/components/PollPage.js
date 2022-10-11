@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import NavBar from "./NavBar";
 import { handleReceiveAnswer } from "../actions/questions";
+import { useNavigate } from "react-router-dom";
 
 const PollPage = ({questions, users, authedUser, dispatch}) => {
     const [id, setId] = useState("");                               //Declare global variables.
@@ -18,14 +19,15 @@ const PollPage = ({questions, users, authedUser, dispatch}) => {
         setId(idAux);
     }, []);
 
+    const navigate = useNavigate();
     if(Object.keys(questions).length!==0 && id!==""){
-        votesOptionOne = questions[id].optionOne.votes;             //Populate global variables after everything loaded.
-        votesOptionTwo = questions[id].optionTwo.votes;
+            votesOptionOne = questions[id].optionOne.votes;             //Populate global variables after everything loaded.
+            votesOptionTwo = questions[id].optionTwo.votes;
 
-        numVotesOpt1 = votesOptionOne.length;
-        numVotesOpt2 = votesOptionTwo.length;
-        percVotesOpt1 = Math.floor(100*numVotesOpt1/(numVotesOpt1 + numVotesOpt2));
-        percVotesOpt2 = 100 - percVotesOpt1;
+            numVotesOpt1 = votesOptionOne.length;
+            numVotesOpt2 = votesOptionTwo.length;
+            percVotesOpt1 = Math.floor(100*numVotesOpt1/(numVotesOpt1 + numVotesOpt2));
+            percVotesOpt2 = 100 - percVotesOpt1;
     }
 
     const isAnswered = () => {
@@ -42,10 +44,10 @@ const PollPage = ({questions, users, authedUser, dispatch}) => {
             answer: e.target.name, 
         }));
     }
-    
+
     return (
-        id=="" || Object.keys(questions).length===0
-        ? <div>Loading</div>
+        id=="" || Object.keys(questions).length===0 
+        ? <div className="loading"></div>
         :
         <div >
             <NavBar/>

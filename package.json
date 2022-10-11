@@ -1,5 +1,9 @@
 {
   "name": "employee-polls-web-app",
+  "jest": {
+    "verbose": true,
+    "testEnvironment": "jsdom"
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,15 +14,17 @@
     "react-router-dom": "^6.4.0",
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
+    "redux-thunk": "^2.4.1",
     "redux-toolkit": "^1.1.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test jest",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
+  "transform": {},
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -38,8 +44,12 @@
     ]
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.19.4",
+    "@babel/preset-react": "^7.18.6",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
-    "jest": "^27.5.1"
+    "babel-jest": "^29.1.2",
+    "jest": "^27.5.1",
+    "react-test-renderer": "^18.2.0"
   }
 }

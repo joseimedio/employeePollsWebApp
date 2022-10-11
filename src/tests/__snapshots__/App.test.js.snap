@@ -1,57 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Error404 will match the snapshot when no props are passed. 1`] = `
+exports[`App will match the snapshot when authedUser and questions are passed as props. 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div>
+      <div
+        data-testid="target-page"
+      >
         <div>
-          Here goes the NavBar
-        </div>
-        <div
-          class="poll"
-        >
-          <h1
-            data-testid="error-title"
-            style="color: red;"
-          >
-            Error 404
-          </h1>
-          <h3>
-            Route not found. Please log in.
-          </h3>
-          <button
-            data-testid="btn"
-          >
-            Go to Log In
-          </button>
+          DashboardPage
         </div>
       </div>
     </div>
   </body>,
   "container": <div>
-    <div>
+    <div
+      data-testid="target-page"
+    >
       <div>
-        Here goes the NavBar
-      </div>
-      <div
-        class="poll"
-      >
-        <h1
-          data-testid="error-title"
-          style="color: red;"
-        >
-          Error 404
-        </h1>
-        <h3>
-          Route not found. Please log in.
-        </h3>
-        <button
-          data-testid="btn"
-        >
-          Go to Log In
-        </button>
+        DashboardPage
       </div>
     </div>
   </div>,

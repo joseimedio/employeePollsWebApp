@@ -1,8 +1,10 @@
 import NavBar from "./NavBar";
 import QuestionList from "./QuestionList";
 import { connect } from "react-redux";
+import { useState } from "react";
 
 const DashboardPage = ({questionsIds, questions, authedUser}) => {
+    const [showUnanswered, setShowUnanswered] = useState(true);
 
     const newQuestionsIds = questionsIds.filter(
         (qId) => !(questions[qId].optionOne.votes.includes(authedUser)
@@ -12,22 +14,31 @@ const DashboardPage = ({questionsIds, questions, authedUser}) => {
         (qId) => !newQuestionsIds.includes(qId)
     );
 
+    const handleClick = (e) => {
+        e.preventDefault();
+        setShowUnanswered(!showUnanswered);
+    }
+
     return (
         
         <div>
             <NavBar/>
-            <div className="space-for-navbar"></div>
+
             <div className="container">
                 <div className="question-list">
-                    <QuestionList 
+                    {showUnanswered
+                    ? <QuestionList 
                         name="New Questions"
                         ids={newQuestionsIds}
                     />
-                    <QuestionList 
+                    : <QuestionList 
                         name="Done"
                         ids={doneIds}
-                    />
+                    />}
                 </div>
+                <form>
+                    <button onClick={handleClick}>Switch to {showUnanswered ? "answered" : "unanswered"} polls</button>
+                </form>
             </div>
             
         </div>

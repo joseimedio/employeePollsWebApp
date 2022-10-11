@@ -1,5 +1,5 @@
+import { _saveQuestion, _saveQuestionAnswer} from "../utils/_DATA";
 
-import { _saveQuestion, _saveQuestionAnswer } from '../utils/_DATA';
 
 describe('_saveQuestion', () => {
     const author = "Author";

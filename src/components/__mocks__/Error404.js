@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import NavBar from "./NavBar";
 
 const Error404 = () => {
     const [switchingPage, setSwitchingPage] = useState(false);
@@ -20,7 +19,7 @@ const Error404 = () => {
         ? <div className="loading"></div>
         : 
         <div>
-            <NavBar />
+            <div>Here goes the NavBar</div>
             <div className="poll">
                 <h1 
                     data-testid="error-title"
