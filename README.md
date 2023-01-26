@@ -1,4 +1,4 @@
-# Employee Polls Project
+# Employee Polls Project (React + Redux)
 
 This project was completed as a part of the React Nanodegree Program (Udacity) in October 2022 by José Imedio.
 
