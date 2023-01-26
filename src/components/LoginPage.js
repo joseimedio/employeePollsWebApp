@@ -32,7 +32,7 @@ const LoginPage = ({users, dispatch, authedUser}) => {
         : <div>
             <NavBar />
             <div className="poll">
-                <img className="avatar" src={greyIconURL}></img>
+                <img className="avatar" src={greyIconURL} alt="avatar"></img>
                 <h3>Select your username:</h3>
                 <form
                     onChange={changeUser}

@@ -31,6 +31,7 @@ const NavBar = ({authedUser, users, dispatch}) => {
                     <img 
                         className="avatar avatar-small" 
                         src={greyIconURL}
+                        alt="avatar"
                     ></img>
                     <Link className="nav-bar-element" to="/login">Log In</Link>
                 </div>
@@ -40,6 +41,7 @@ const NavBar = ({authedUser, users, dispatch}) => {
                     <img 
                         className="avatar avatar-small" 
                         src={users[authedUser].avatarURL}
+                        alt="avatar"
                     ></img>
                     <Link className="nav-bar-element" to="/login" onClick={handleLogOut}>Log Out</Link>
                 </div>

@@ -38,7 +38,7 @@ const CreatePollPage = ({dispatch, authedUser, users}) => {
             <NavBar />
             <h1>Create a new question:</h1>
             <div className="poll">
-                <img className="avatar" src={users[authedUser].avatarURL}></img>
+                <img className="avatar" src={users[authedUser].avatarURL} alt="avatar"></img>
                 <h3>{`Author: ${authedUser}`}</h3>
                 <p>Would you rather...</p>
                 <form

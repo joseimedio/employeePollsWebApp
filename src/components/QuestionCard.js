@@ -18,11 +18,11 @@ const QuestionCard = ({id, questions, users, authedUser}) => {
     }
 
     return (
-        id=="" || Object.keys(questions).length===0
+        id==="" || Object.keys(questions).length===0
         ? <div>Loading</div>
         :
         <div className="question-card">
-            <img className="avatar" src={users[author].avatarURL}></img>
+            <img className="avatar" src={users[author].avatarURL} alt="avatar"></img>
             <h3 
                 style={{color:author=== authedUser? "green" : null}}
             >{author}</h3>

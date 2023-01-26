@@ -51,7 +51,7 @@ const LeaderboardPage = ({questions, users, authedUser}) => {
                             style= {{ color: user.id===authedUser ? null : "grey"}}>
                                 <div className="cell-small">{i}</div>
                                 <div className="cell">
-                                    <img className="avatar avatar-small" src={users[user.id].avatarURL}></img>
+                                    <img className="avatar avatar-small" src={users[user.id].avatarURL} alt="avatar"></img>
                                     {`${users[user.id].name}`}
                                 </div>
                                 <div className="cell">{`${user.questionsCreated} questions`}</div>

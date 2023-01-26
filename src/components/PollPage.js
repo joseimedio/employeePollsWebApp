@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import NavBar from "./NavBar";
 import { handleReceiveAnswer } from "../actions/questions";
-import { useNavigate } from "react-router-dom";
 
 const PollPage = ({questions, users, authedUser, dispatch}) => {
     const [id, setId] = useState("");                               //Declare global variables.
@@ -19,7 +18,6 @@ const PollPage = ({questions, users, authedUser, dispatch}) => {
         setId(idAux);
     }, []);
 
-    const navigate = useNavigate();
     if(Object.keys(questions).length!==0 && id!==""){
             votesOptionOne = questions[id].optionOne.votes;             //Populate global variables after everything loaded.
             votesOptionTwo = questions[id].optionTwo.votes;
@@ -46,13 +44,13 @@ const PollPage = ({questions, users, authedUser, dispatch}) => {
     }
 
     return (
-        id=="" || Object.keys(questions).length===0 
+        id==="" || Object.keys(questions).length===0 
         ? <div className="loading"></div>
         :
         <div >
             <NavBar/>
             <div className="poll">
-                <img className="avatar" src={users[questions[id].author].avatarURL}></img>
+                <img className="avatar" src={users[questions[id].author].avatarURL} alt="avatar"></img>
                 <h3 style={{color: questions[id].author!==authedUser ? null : "green"}}>{`Author: ${questions[id].author}`}</h3>
                 
                 <p>Would you rather...</p>
