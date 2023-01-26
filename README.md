@@ -1,19 +1,41 @@
 # Employee Polls Project
 
-This is José Imedio's submission for the final assessment project for Udacity's React & Redux course.
+This project was completed as a part of the React Nanodegree Program (Udacity) in October 2022 by José Imedio.
 
-The `_DATA.js` file represents a fake database and methods that let you access the data. The only thing you need to edit in the ` _DATA.js` file is the value of `avatarURL`. Each user should have an avatar, so you’ll need to add the path to each user’s avatar.
+It consists on a web app to be used internally at a simulated company. This app allows employees to create polls to be answered by their colleagues and themselves. 
 
-In order to execute the project in development mode, only `npm install` and `npm start` must be run.
+The app consists of 4 pages:
+- Log In: the user simply chooses their name from a list. 
+- Home: contains all polls available, divided into answered and unanswered. The user can complete the ones they didn't complete before. And also see the results of the ones they already completed. 
+- Leaderboard: classification table showing how many polls each user created and how many they answered. 
+- New: create a new poll.
 
-Here is a brief descriptions of the folders that can be found in the `src` folder:
+## Instructions
+To launch the app:
+- install all project dependencies with 'npm install'
+- start the development server in '/src' with 'npm start'
 
-### Actions
+## Content
+- README.md
+- package-lock.json 
+- package.json 
+- LICENSE.txt
+- CODEOWNERS.txt
+- babel.config.js
+- .gitignore
+- .npmignore
+#### public 
+#### src 
 
+## The src folder
+- index.js
+- reportWebVitals.js 
+- setupTests.js
+- CSS files
+- SVG logo.
+#### actions
 Contains the Redux actions `authedUser`, `questions`, `users` and `shared`.
-
-### Components
-
+#### components
 Contains all the React components:
 - App.js              -> Initializes the app.
 - CreatePollPage.js   -> Rendered when the authedUser wants to create a new question.
@@ -25,19 +47,18 @@ Contains all the React components:
 - PollPage.js         -> Rendered when the user clicks on a specific question on the homepage. 
 - QuestionCard.js     -> Paints a card for a specific question on the homepage.
 - QuestionList.js     -> Displays a list of `QuestionCard.js` on the homepage.
-
-### Middleware
-
+#### middleware
 Contains the Redux middleware files `logger` and `index`.
-
-### Reducers
-
+#### reducers
 Contains the Redux reducers `authedUser`, `questions`, `users` and `index`.
-
-### Tests
-
+#### tests
 Contains the Jest test files `_DATA.test.js`, `api.test.js`, `App.test.js` and `Error404.test.js`.
-
-### Utils
-
+#### utils
 Contains the logic to access the backend and the helper functions.
+
+## Possible improvements
+Include a proper login system, instead of simply choosing a name from a list.
+Improve the web app design, which is currently extremely basic.
+
+## Licensing, Authors and Acknowledgements
+The basic website (HTML and CSS) and the simulated database containing the users and the first few questions were provided by Udacity, Inc.
